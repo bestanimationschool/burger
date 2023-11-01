@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Burger Template</title>
+<link href="common-style.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/*
+font-family: 'Poppins', sans-serif;
+font-family: 'Archivo', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+:root{
+	--text-white:#fff;
+	--text-red:#f64b3c;
+	--bg-red:#f64b3c;
+	--bg-light:#f6eedf;
+	--bg-white:#fff;
+	--bg-dark:#222222;
+}
+html, body{
+	position:absolute;
+	min-width:100%;
+}
+*{
+	margin:0;
+}
+.container-fluid{
+	width:100%;
+	height:auto;	
+}
+.container{
+	width:1186px;
+	height:auto;
+}
+.container nav a{
+	font-family: 'Poppins', sans-serif;
+	font-size:25px;
+	color:var(--text-white);
+	text-decoration:none;
+	float:left;
+	transition:all 0.5s;
+	margin:0 0 0 60px;
+}
+.container nav a:hover, .container nav a.active{
+	color:var(--text-red);
+	transition:all 0.5s;
+}
+.headerBg{
+	background:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0) 20%), url(images/body-base.jpg) no-repeat;
+	background-size:cover;
+}
+.header h1{
+	font-family: 'Archivo', sans-serif;
+	font-size:90px;
+	color:var(--text-white);
+}
+.header p{
+	font-family: 'Nunito', sans-serif;
+	font-size:30px;
+	color:var(--text-white);
+	margin:30px 0;
+}
+.header button{
+	font-family: 'Montserrat', sans-serif;
+	color:var(--text-white);
+	font-size:25px;
+	text-transform:uppercase;
+	background:var(--bg-red);
+	padding:15px 60px;
+	border:none;
+	border-radius:50px;
+}
+.bBurger{
+	background:url(images/chef-base.png) no-repeat center, var(--bg-light);
+	height:auto;
+}
+.text-white{
+	color:var(--text-white);
+}
+.text-red{
+	color:var(--text-red);
+}
+.rounded-circle{
+	border-radius:50%;
+}
+.flex-column{
+	flex-direction:column;
+}
+.text-uppercase{
+	text-transform:uppercase;
+}
+.poppins{
+	font-family: 'Poppins', sans-serif;
+}
+.archivo{
+	font-family: 'Archivo', sans-serif;
+}
+.nunito{
+	font-family: 'Nunito', sans-serif;
+}
+.montserrat{
+	font-family: 'Montserrat', sans-serif;
+}
+.bestBurger{
+	background: var(--bg-red);
+	height:auto;
+}
+.bg-white{
+	background:var(--bg-white);
+}
+.bestBurger button{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	cursor:pointer;
+	padding:16px 80px;
+	border-radius:50rem;
+	font-size:1.5rem;
+	color:var(--text-red);
+	background:var(--bg-white);
+	transition:all 0.5s;
+	border:none;
+}
+.bestBurger button:hover{
+	background:var(--bg-red);
+	color:var(--text-white);
+	box-shadow:0 0 5px #000;
+}
+.bigBurger{
+	background: url(images/best-burger.png) no-repeat center, var(--bg-light);
+	height:auto;
+}
+.bigBurger button{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	cursor:pointer;
+	padding:16px 80px;
+	border-radius:50rem;
+	font-size:1.5rem;
+	color:var(--text-white);
+	background:var(--bg-red);
+	transition:all 0.5s;
+	border:none;
+}
+.bigBurger button:hover{
+	background:var(--bg-red);
+	color:var(--text-white);
+	box-shadow:0 0 5px #000;
+}
+.statistics {
+	background: var(--bg-red);
+	height:auto;
+}
+.circle{
+	width:310px;
+	height:310px;
+	border:6px solid white;
+	border-radius:50%;
+}
+.circle p:first-child{
+	margin:100px 0 0 0;
+}
+.update{
+	background:url(images/update-base.png) no-repeat center, var(--bg-light);
+}
+.update form input[type="email"]{
+	width:549px;
+	height:53px;
+	border:none;
+	outline:none;
+	color:#835e3f;
+	border-top-left-radius:50rem;
+	border-bottom-left-radius:50rem;
+	padding:0 0 0 30px;
+	font-size:1.5rem;
+}
+.update form input::placeholder{
+	color:#835e3f;	
+}
+.update form input[type="button"]{
+	width:auto;
+	height:53px;
+	border:none;
+	outline:none;
+	color:var(--text-white);
+	background:var(--bg-red);
+	border-top-right-radius:50rem;
+	border-bottom-right-radius:50rem;
+	font-size:1.5rem;
+	text-transform:uppercase;
+	padding:0 41px;
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid headerBg header pb-5">
+	<div class="container m-auto d-flex align-items-center justify-content-space-between" style="height:233px">
+		<a href="#"><img src="images/logo.png" alt=""></a>
+		<nav class="float-end">
+			<a href="#" class="active">Home</a>
+			<a href="#">Product</a>
+			<a href="#">Promo</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>	
+		</nav>	
+	</div>
+	<div class="container m-auto">
+		<h1>Get Cashback<br>up to 50%</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Suspendisse consectetur<br>justo eu nunc consequat.</p>
+		<button>order now</button>
+	</div>
+</div>
+<div class="container-fluid bBurger text-red">
+	<div class="container m-auto d-flex py-5">
+		<div class="flex-grow1 text-center">
+			<p class="display-3 mb-2 archivo">Our Chef</p>
+			<p class="fs-4 montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vi-<br>vamus lacinia odio vitae vestibulum vestibulum.</p>
+		</div>
+	</div>
+	<div class="container m-auto d-flex pb-5">
+		<div class="flex-grow1 flex-column text-center">
+			<img src="images/founder.png" alt="" class="rounded-circle">
+			<p class="fs-2 fw-bold text-uppercase my-1 archivo">Aiden Hunter</p>
+			<p class="fs-4 nunito">Founder</p>
+		</div>
+		<div class="flex-grow1 flex-column text-center">
+			<img src="images/co-founder1.png" alt="" class="rounded-circle">
+			<p class="fs-2 fw-bold text-uppercase my-1 archivo">Ethel Ramsey</p>
+			<p class="fs-4 nunito">Co-Founder</p>
+		</div>
+		<div class="flex-grow1 flex-column text-center">
+			<img src="images/co-founder2.jpg" alt="" class="rounded-circle">
+			<p class="fs-2 fw-bold text-uppercase my-1 archivo">Fannie Stewart</p>
+			<p class="fs-4 nunito">Co-Founder</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid bestBurger text-white py-5">
+	<div class="container m-auto d-flex py-5 d-flex align-items-center">
+		<div class="flex-grow1">
+			<img src="images/best-burger.jpg" alt="" class="rounded-circle">
+		</div>
+		<div class="flex-grow1 text-white">
+			<p class="display-2 archivo">Best Burger</p>
+			<p class="fs-2 nunito my-4">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Vivamus lacinia odio vitae<br>vestibulum vestibulum.</p>
+			<button>order now</button>
+		</div>
+	</div>
+</div>
+<div class="container-fluid bigBurger text-red">
+	<div class="container m-auto d-flex py-5 d-flex align-items-center">
+		<div class="flex-grow1">
+			<p class="display-2 archivo">Best Burger</p>
+			<p class="fs-2 nunito my-4">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit. Vivamus lacinia odio vitae<br>vestibulum vestibulum.</p>
+			<button>order now</button>
+		</div>
+		<div class="flex-grow1">
+			<img src="images/best-burger.jpg" alt="" class="rounded-circle">
+		</div>
+	</div>
+</div>
+<div class="container-fluid statistics text-white">
+	<div class="container m-auto d-flex py-5">
+		<div class="flex-grow1 text-center">
+			<p class="display-3 mb-2 archivo">Statistics</p>
+			<p class="fs-4 montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Vivamus lacinia odio vitae vestibulum vestibulum. </p>
+		</div>
+	</div>
+	<div class="container m-auto d-flex pb-5">
+		<div class="flex-grow1 flex-column text-center">
+			<div class="circle">
+				<p class="display-1 archivo">7k</p>
+				<p class="fs-2 text-uppercase montserrat fw-bold">Customer</p>
+			</div>
+		</div>
+		<div class="flex-grow1 flex-column text-center">
+			<div class="circle">
+				<p class="display-1 archivo">109</p>
+				<p class="fs-2 text-uppercase montserrat fw-bold">outlets</p>
+			</div>
+		</div>
+		<div class="flex-grow1 flex-column text-center">
+			<div class="circle">
+				<p class="display-1 archivo">35</p>
+				<p class="fs-2 text-uppercase montserrat fw-bold">Country</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid update text-red text-center">
+	<div class="container m-auto d-flex py-5 d-flex align-items-center">
+		<div class="flex-grow1 py-5">
+			<p class="display-2 archivo">Don’t miss Our Update</p>
+			<p class="fs-2 nunito my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Vivamus lacinia odio vitae vestibulum vestibulum. </p>
+			<form>
+				<input type="email" placeholder="Your Email" name="email" id="email">
+				<input type="button" value="subscribe">
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
